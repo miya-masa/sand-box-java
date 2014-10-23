@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.2/b316e9737eea25e9ddd6d88eaeee76878045c6b2/logback-classic-1.1.2.jar" sourcepath="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.2/decd76e2c461157804473468bbdc6b8eb6d6121b/logback-classic-1.1.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/8ac073941721e0b521ec8e8bad088b1e7b8cd332/lombok-1.14.8.jar" sourcepath="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/ae5d70b49f5522a5c63abee50d9e9ad7a1cfce4e/lombok-1.14.8-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.2/2d23694879c2c12f125dac5076bdfd5d771cc4cb/logback-core-1.1.2.jar" sourcepath="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.2/502e1c764542fe747896c1dc04f023acfe0e5cbc/logback-core-1.1.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.6/562424e36df3d2327e8e9301a76027fca17d54ea/slf4j-api-1.7.6.jar" sourcepath="C:/Users/mamiyauc/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.6/97bb93c1badeae97a3d37e3c902df2985ee3de34/slf4j-api-1.7.6-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,16 @@
+apply plugin: "java"
+apply plugin: 'eclipse'
+group = "myorg"
+
+sourceCompatibility=1.8
+version = 1.0
+
+repositories { mavenCentral() }
+
+
+dependencies {
+  compile 'ch.qos.logback:logback-classic:1.1.2'
+  compile 'org.projectlombok:lombok:1.14.8'
+  compile 'junit:junit:4.11'
+}
+

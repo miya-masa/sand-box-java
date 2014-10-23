@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%thread][%X{req_id}][%X{u_id:-ANONYMOUS}] %-5level %logger{20} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>logs/foo.log</file>
+		<encoder>
+			<pattern>%d [%thread][%X{req_id}][%X{u_id:-ANONYMOUS}] %-5level %logger{20} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="ROLLING_FILE_TIMEBASED" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/logFile_%d{yyyy-MM-dd-HH-mm-ss}.log</fileNamePattern>
+			<!-- keep 5 seconds of history -->
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="ROLLING_TIME_AND_SIZE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/mylog.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>logs/mylog-%d{yyyy-MM-dd-HH-mm-ss}.%i.gz</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>1MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d [%thread][%X{req_id}][%X{u_id:-ANONYMOUS}] %-5level %logger{20} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="ROLLING_FILE_SIZEBASED" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logFile.log</file>
+		<maxIndex>21</maxIndex>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>logs/logFile.%i.log</fileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>200KB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="stdout">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="sizebased" level="debug">
+		<appender-ref ref="ROLLING_FILE_SIZEBASED" />
+	</logger>
+	<logger name="sizeAndTimebased" level="debug">
+		<appender-ref ref="ROLLING_TIME_AND_SIZE" />
+	</logger>
+	<logger name="com.miya.masa.log.sample.file" level="warn">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="com.miya.masa.log.sample" level="debug">
+		<appender-ref ref="ROLLING_FILE_TIMEBASED" />
+	</logger>
+</configuration>
